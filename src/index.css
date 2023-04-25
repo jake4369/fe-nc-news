@@ -524,6 +524,72 @@ p.top-article__text {
   line-height: 1.625rem;
   color: #5e607a;
 }
+
+/* ==================== 
+  COMMENT SECTION
+  ==================== */
+.comment-section__heading {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.comment-card {
+  margin-bottom: 2rem;
+}
+
+.comment-author__info {
+  display: flex;
+  align-items: center;
+}
+
+.comment-author__info {
+  margin-bottom: 1rem;
+}
+
+.comment-card__avatar-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.comment-card__author {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  color: #00001a;
+}
+
+.comment-card__body {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  color: #5e607a;
+  margin-bottom: 1rem;
+}
+
+.comment-card__created-at {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  color: #5e607a;
+  margin-bottom: 1rem;
+}
+
+.comment-card__votes {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  margin-right: 2rem;
+  color: #00001a;
+}
+
+.comment-card__stat {
+  font-weight: 500;
+  color: #5e607a;
+}
+
 /* ======================================== 
  MEDIA QUERIES
  ======================================== */
@@ -742,10 +808,8 @@ p.top-article__text {
   MOST POPULAR ARTICLE
   ==================== */
   .most-popular-article__title {
-    font-weight: 800;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    color: #00001a;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
     margin-bottom: 2rem;
   }
 
