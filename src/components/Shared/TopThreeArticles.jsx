@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getAllArticles } from "../../utils/api";
 import { useIsLoading } from "../../context/IsLoadingContext";
 
@@ -29,7 +30,9 @@ const TopThreeArticles = () => {
         />
         <div className="top-article__text-container">
           <span className="top-article__number">0{index + 1}</span>
-          <h3 className="top-article__heading">{article.title}</h3>
+          <Link to={`/article/${article.article_id}`}>
+            <h3 className="top-article__heading">{article.title}</h3>
+          </Link>
         </div>
       </div>
     );
