@@ -14,11 +14,9 @@ const SingleArticle = () => {
     setIsLoading(true);
     getArticle(article_id).then((articleData) => {
       setArticle(articleData);
-    });
-    if (article !== null) {
       setIsLoading(false);
-    }
-  }, [article, article_id]);
+    });
+  }, []);
 
   return (
     <div className="single-article__container">
