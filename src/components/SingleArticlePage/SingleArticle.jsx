@@ -18,7 +18,7 @@ const SingleArticle = () => {
     if (article !== null) {
       setIsLoading(false);
     }
-  }, [article]);
+  }, [article, article_id]);
 
   return (
     <div className="single-article__container">
