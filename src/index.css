@@ -25,6 +25,14 @@ main {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* ======================================== 
+ LAYOUT
+ ======================================== */
+
 /* ==================== 
  HEADER
  ==================== */
@@ -185,6 +193,10 @@ ul.mobile-nav li {
   }
 }
 
+/* ======================================== 
+ HOMEPAGE
+ ======================================== */
+
 /* ==================== 
  MAIN ARTICLE
  ==================== */
@@ -328,9 +340,46 @@ p.top-article__text {
 }
 
 /* ======================================== 
+ ALL ARTICLES PAGE
+ ======================================== */
+.articles-column {
+  width: 91.4666666667%;
+  max-width: 56.25rem;
+  margin: 0 auto 4rem auto;
+}
+
+/* ==================== 
+ MOST POPULAR ARTICLE
+ ==================== */
+.most-popular-article__title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #00001a;
+  margin-bottom: 2rem;
+}
+
+.most-popular-article__img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.topic-link {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  text-transform: uppercase;
+  color: #5e607a;
+}
+
+/* ======================================== 
  MEDIA QUERIES
  ======================================== */
 @media (min-width: 48rem) {
+  /* ======================================== 
+  LAYOUT
+  ======================================== */
+
   /* ==================== 
   HEADER
   ==================== */
@@ -381,6 +430,10 @@ p.top-article__text {
 }
 
 @media (min-width: 90rem) {
+  /* ======================================== 
+  LAYOUT
+  ======================================== */
+
   /* ==================== 
   HEADER
   ==================== */
@@ -409,6 +462,10 @@ p.top-article__text {
   ul.desktop-nav li:hover {
     color: #f15d51;
   }
+
+  /* ======================================== 
+  HOMEPAGE
+  ======================================== */
 
   /* ==================== 
   MAIN ARTICLE
@@ -461,7 +518,9 @@ p.top-article__text {
   .new-articles__container {
     width: 31.5315315315%;
     min-width: 21.875rem;
-    max-width: unset;
+    max-width: 21.875rem;
+    height: 31.9375rem;
+    max-height: 31.9375rem;
     margin: 0;
     padding: 2rem 1.5rem 1.9375rem 1.5rem;
   }
@@ -511,5 +570,39 @@ p.top-article__text {
 
   h3.top-article__heading:hover {
     color: #f15d51;
+  }
+
+  /* ======================================== 
+  ALL ARTICLES PAGE
+  ======================================== */
+  .articles-column {
+    width: 65.7657657658%;
+    min-width: 45.625rem;
+    max-width: unset;
+    margin: 0 0 2rem 0;
+  }
+
+  /* ==================== 
+  MOST POPULAR ARTICLE
+  ==================== */
+  .most-popular-article__title {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    color: #00001a;
+    margin-bottom: 2rem;
+  }
+
+  .most-popular-article__img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .topic-link {
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+    text-transform: uppercase;
+    color: #5e607a;
   }
 }
