@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
 
 * {
   margin: 0;
@@ -419,6 +419,75 @@ p.top-article__text {
 }
 
 /* ======================================== 
+ SINGLE ARTICLE PAGE
+ ======================================== */
+.single-article__container {
+  width: 91.4666666667%;
+  max-width: 56.25rem;
+  margin: 0 auto 4rem auto;
+}
+
+.single-article__title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #00001a;
+  margin-bottom: 2rem;
+}
+
+.single-article__img {
+  width: 100%;
+}
+
+.single-article__author-info,
+.single-article__stats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.single-article__author {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  margin-right: 2rem;
+  color: #00001a;
+}
+
+.single-article__created-at {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  color: #5e607a;
+}
+
+.single-article__votes {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  margin-right: 2rem;
+  color: #00001a;
+}
+
+.single-article__comment-count {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  color: #00001a;
+}
+
+.single-article__stat {
+  font-weight: 500;
+  color: #5e607a;
+}
+
+.single-article__body {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  color: #5e607a;
+}
+/* ======================================== 
  MEDIA QUERIES
  ======================================== */
 @media (min-width: 48rem) {
@@ -653,6 +722,48 @@ p.top-article__text {
     font-size: 0.9375rem;
     line-height: 1.625rem;
     text-transform: uppercase;
+    color: #5e607a;
+  }
+
+  /* ======================================== 
+  SINGLE ARTICLE PAGE
+  ======================================== */
+  .single-article-page .flex-container {
+    margin-bottom: 0;
+  }
+
+  .single-article__container {
+    width: 65.7657657658%;
+    min-width: 45.625rem;
+    max-width: unset;
+    margin: 0 0 2rem 0;
+  }
+
+  .single-article__title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .single-article__img {
+    margin-bottom: 1rem;
+  }
+
+  .single-article__flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .single-article__author-info,
+  .single-article__stats {
+    margin-bottom: 0;
+  }
+
+  .single-article__body {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
     color: #5e607a;
   }
 }
