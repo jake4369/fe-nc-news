@@ -6,7 +6,10 @@ const SingleArticlePage = () => {
   return (
     <div className="single-article-page">
       <div className="flex-container">
-        <SingleArticle />
+        <section className="articles-column">
+          <SingleArticle />
+        </section>
+
         <NewArticles />
       </div>
 
