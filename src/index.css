@@ -351,6 +351,10 @@ p.top-article__text {
 /* ==================== 
  MOST POPULAR ARTICLE
  ==================== */
+.most-popular-article {
+  margin-bottom: 3rem;
+}
+
 .most-popular-article__title {
   font-weight: 800;
   font-size: 2.5rem;
@@ -361,7 +365,9 @@ p.top-article__text {
 
 .most-popular-article__img {
   width: 100%;
+  min-height: 25rem;
   margin-bottom: 1rem;
+  object-fit: cover;
 }
 
 .topic-link {
@@ -370,6 +376,46 @@ p.top-article__text {
   line-height: 1.625rem;
   text-transform: uppercase;
   color: #5e607a;
+}
+
+/* ==================== 
+ ALL ARTICLES SECTION
+ ==================== */
+.all-article-section {
+  display: grid;
+  grid-template-columns: repeat(2, 48%);
+  gap: 2rem 0;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 56.25rem;
+  margin: 0 auto;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.article-card__img {
+  width: 100%;
+  min-height: 9.375rem;
+  max-height: 12.5rem;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.article-card__title {
+  font-weight: 800;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #00001a;
+  margin-bottom: 1rem;
+}
+
+.article-card .topic-link {
+  margin-top: auto;
 }
 
 /* ======================================== 
@@ -575,6 +621,10 @@ p.top-article__text {
   /* ======================================== 
   ALL ARTICLES PAGE
   ======================================== */
+  .all-articles-page .flex-container {
+    margin-bottom: 0;
+  }
+
   .articles-column {
     width: 65.7657657658%;
     min-width: 45.625rem;

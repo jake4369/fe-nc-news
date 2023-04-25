@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllArticles } from "../utils/api";
 
 import MostPopularArticle from "../components/AllArticlesPage/MostPopularArticle";
+import AllArticles from "../components/AllArticlesPage/AllArticles";
 import NewArticles from "../components/Shared/NewArticles";
 import TopThreeArticles from "../components/Shared/TopThreeArticles";
 
@@ -18,15 +19,20 @@ const AllArticlesPage = () => {
     });
   }, []);
 
+  console.log(mostPopularArticle);
+
   return (
     <div className="all-articles-page">
       <div className="flex-container">
         <section className="articles-column">
           <MostPopularArticle article={mostPopularArticle} />
+          <AllArticles articles={allArticles} />
         </section>
 
         <NewArticles />
       </div>
+
+      <TopThreeArticles />
     </div>
   );
 };
