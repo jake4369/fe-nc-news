@@ -459,7 +459,7 @@ p.top-article__text {
  SINGLE ARTICLE PAGE
  ======================================== */
 .single-article__container {
-  width: 91.4666666667%;
+  width: 100%;
   max-width: 56.25rem;
   margin: 0 auto 4rem auto;
 }
@@ -770,7 +770,7 @@ p.top-article__text {
   }
 
   .single-article__container {
-    width: 65.7657657658%;
+    width: 100%;
     min-width: 45.625rem;
     max-width: unset;
     margin: 0 0 2rem 0;
