@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import logo from "../../assets/images/logo.svg";
 
@@ -32,7 +33,9 @@ const Header = () => {
 
   return (
     <header>
-      <img src={logo} alt="Company logo" className="logo" />
+      <Link to="/">
+        <img src={logo} alt="Company logo" className="logo" />
+      </Link>
 
       <button className="open-menu-btn" onClick={() => openMenu()}></button>
 
