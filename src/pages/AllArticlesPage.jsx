@@ -19,8 +19,6 @@ const AllArticlesPage = () => {
     });
   }, []);
 
-  console.log(mostPopularArticle);
-
   return (
     <div className="all-articles-page">
       <div className="flex-container">
