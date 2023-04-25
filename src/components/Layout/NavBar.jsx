@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
   const closeMenu = () => {
     setNavOpen(false);
@@ -21,8 +23,12 @@ const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
             onClick={() => closeMenu()}
           ></button>
           <ul className="mobile-nav">
-            <li>Home</li>
-            <li>New</li>
+            <Link to="/" onClick={() => closeMenu()}>
+              <li>Home</li>
+            </Link>
+            <Link to="/articles" onClick={() => closeMenu()}>
+              <li>Articles</li>
+            </Link>
             <li>Popular</li>
             <li>Trending</li>
             <li>Categories</li>
@@ -31,8 +37,12 @@ const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
       </div>
 
       <ul className="desktop-nav">
-        <li>Home</li>
-        <li>New</li>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/articles">
+          <li>Articles</li>
+        </Link>
         <li>Popular</li>
         <li>Trending</li>
         <li>Categories</li>
