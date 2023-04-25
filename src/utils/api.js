@@ -22,3 +22,20 @@ export const getArticle = (article_id) => {
     })
     .catch((error) => console.error(error));
 };
+
+// COMMENTS
+export const getComments = (article_id, page, limit) => {
+  return newsAPI
+    .get(`/articles/${article_id}/comments?page=${page}&limit=${limit}`)
+    .then(({ data }) => {
+      return data.comments;
+    })
+    .catch((error) => console.error(error));
+};
+
+// Get user by username
+export const getUser = (username) => {
+  return newsAPI.get(`/users/${username}`).then(({ data }) => {
+    return data.user;
+  });
+};
