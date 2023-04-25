@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 const MostPopularArticle = ({ article }) => {
   return (
     <div className="most-popular-article">
-      <p className="most-popular-article__title">{article?.title}</p>
+      <Link to={`/articles/${article?.article_id}`}>
+        <p className="most-popular-article__title">{article?.title}</p>
+      </Link>
 
       <img
         src={article?.article_img_url}
