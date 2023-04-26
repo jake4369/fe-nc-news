@@ -30,7 +30,7 @@ const TopThreeArticles = () => {
         />
         <div className="top-article__text-container">
           <span className="top-article__number">0{index + 1}</span>
-          <Link to={`/article/${article.article_id}`}>
+          <Link to={`/articles/${article.article_id}`}>
             <h3 className="top-article__heading">{article.title}</h3>
           </Link>
         </div>
