@@ -230,6 +230,26 @@ ul.mobile-nav li {
   }
 }
 
+/* ==================== 
+ PAGINATION
+ ==================== */
+.pagination-container {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 0.5625rem;
+  cursor: pointer;
+}
+
+.pagination__page-of-pages {
+  margin: 0 0.5rem;
+}
+
 /* ======================================== 
  HOMEPAGE
  ======================================== */
@@ -476,11 +496,15 @@ p.top-article__text {
   width: 100%;
 }
 
-.single-article__author-info,
-.single-article__stats {
+.single-article__author-info {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.single-article__stats {
+  display: flex;
+  align-items: center;
 }
 
 .single-article__author {
@@ -523,6 +547,7 @@ p.top-article__text {
   font-size: 0.9375rem;
   line-height: 1.625rem;
   color: #5e607a;
+  margin-bottom: 2rem;
 }
 
 /* ==================== 
@@ -658,6 +683,7 @@ p.top-article__text {
   header {
     width: 77.0833333333%;
     min-width: 69.375rem;
+    max-width: unset;
     margin: 5.5625rem auto 55.1px auto;
   }
 
@@ -672,6 +698,7 @@ p.top-article__text {
   /* ==================== 
   NAV BAR
   ==================== */
+
   ul.desktop-nav li {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -852,11 +879,11 @@ p.top-article__text {
 
   .single-article__flex-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: 1.5rem;
   }
 
-  .single-article__author-info,
   .single-article__stats {
     margin-bottom: 0;
   }
