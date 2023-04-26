@@ -20,23 +20,23 @@ const Pagination = ({
   };
 
   return (
-    <div className="comments__pagination-container">
+    <div className="pagination-container">
       <button
         onClick={() => prevPage(componentRef)}
         disabled={currentPage === 1}
-        className="comments__pagination-btn"
+        className="pagination-btn"
       >
         Prev Page
       </button>
 
-      <p className="comments__pagination-pages">
+      <p className="pagination__page-of-pages">
         Page {currentPage} of {lastPage}
       </p>
 
       <button
         onClick={() => nextPage(componentRef)}
         disabled={currentPage === lastPage}
-        className="comments__pagination-btn"
+        className="pagination-btn"
       >
         Next Page
       </button>
