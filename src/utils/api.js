@@ -24,7 +24,7 @@ export const getArticle = (article_id) => {
 };
 
 // COMMENTS
-export const getComments = (article_id, page, limit) => {
+export const getComments = (article_id, page = 1, limit = 5) => {
   return newsAPI
     .get(`/articles/${article_id}/comments?page=${page}&limit=${limit}`)
     .then(({ data }) => {
