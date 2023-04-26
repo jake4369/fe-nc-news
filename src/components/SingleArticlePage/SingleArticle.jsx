@@ -16,7 +16,7 @@ const SingleArticle = () => {
       setArticle(articleData);
       setIsLoading(false);
     });
-  }, []);
+  }, [article_id]);
 
   return (
     <div className="single-article__container">
@@ -40,6 +40,8 @@ const SingleArticle = () => {
               </p>
             </div>
 
+            <p className="single-article__body">{article?.body}</p>
+
             <div className="single-article__stats">
               <p className="single-article__votes">
                 Votes:{" "}
@@ -53,8 +55,6 @@ const SingleArticle = () => {
               </p>
             </div>
           </div>
-
-          <p className="single-article__body">{article?.body}</p>
         </>
       )}
     </div>
