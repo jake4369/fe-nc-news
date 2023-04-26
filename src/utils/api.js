@@ -28,7 +28,7 @@ export const getComments = (article_id, page, limit) => {
   return newsAPI
     .get(`/articles/${article_id}/comments?page=${page}&limit=${limit}`)
     .then(({ data }) => {
-      return data.comments;
+      return data;
     })
     .catch((error) => console.error(error));
 };
