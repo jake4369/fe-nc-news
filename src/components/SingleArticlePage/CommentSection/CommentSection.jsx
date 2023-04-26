@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getComments, getUser, getArticle } from "../../../utils/api";
 
 import CommentCard from "./CommentCard";
+import Pagination from "../../Shared/Pagination";
 
 const CommentSection = () => {
   const { article_id } = useParams();
@@ -40,19 +41,19 @@ const CommentSection = () => {
     return <CommentCard key={comment.comment_id} comment={comment} />;
   });
 
-  const lastPage = Math.ceil(totalComments / limit);
+  // const lastPage = Math.ceil(totalComments / limit);
 
-  const nextPage = () => {
-    if (currentPage < lastPage) {
-      setCurrentPage((prev) => prev + 1);
-      commentsContainerRef.current.scrollIntoView();
-    }
-  };
+  // const nextPage = (componentRef) => {
+  //   if (currentPage < lastPage) {
+  //     setCurrentPage((prev) => prev + 1);
+  //     componentRef.current.scrollIntoView();
+  //   }
+  // };
 
-  const prevPage = () => {
-    setCurrentPage((prev) => prev - 1);
-    commentsContainerRef.current.scrollIntoView();
-  };
+  // const prevPage = (componentRef) => {
+  //   setCurrentPage((prev) => prev - 1);
+  //   componentRef.current.scrollIntoView();
+  // };
 
   return (
     <section className="comment-section">
@@ -66,27 +67,13 @@ const CommentSection = () => {
 
       <div className="comments-container">
         {commentCards}
-        <div className="comments__pagination-container">
-          <button
-            onClick={prevPage}
-            disabled={currentPage === 1}
-            className="comments__pagination-btn"
-          >
-            Prev Page
-          </button>
-
-          <p className="comments__pagination-pages">
-            Page {currentPage} of {lastPage}
-          </p>
-
-          <button
-            onClick={nextPage}
-            disabled={currentPage === lastPage}
-            className="comments__pagination-btn"
-          >
-            Next Page
-          </button>
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalComments={totalComments}
+          limit={limit}
+          componentRef={commentsContainerRef}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </section>
   );
