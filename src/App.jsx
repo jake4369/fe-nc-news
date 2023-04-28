@@ -4,6 +4,7 @@ import Layout from "./components/Layout/Layout";
 import Homepage from "./pages/Homepage";
 import AllArticlesPage from "./pages/AllArticlesPage";
 import SingleArticlePage from "./pages/SingleArticlePage";
+import LoginPage from "./pages/LoginPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/articles" element={<AllArticlesPage />} />
           <Route path="/articles/:article_id" element={<SingleArticlePage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Route>
       </Routes>
     </main>
