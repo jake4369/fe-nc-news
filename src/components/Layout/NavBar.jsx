@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { useUser } from "../../context/UserContext";
 
 const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
+  const { loggedInUser, setLoggedInUser } = useUser();
+
+  const handleLogOut = () => {
+    setLoggedInUser(null);
+    closeMenu();
+  };
+
   const closeMenu = () => {
     setNavOpen(false);
   };
@@ -18,20 +26,25 @@ const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
         <div className="filter"></div>
 
         <div className="mobile-nav__container">
-          <button
-            className="close-menu-btn"
-            onClick={() => closeMenu()}
-          ></button>
+          <button className="close-menu-btn" onClick={closeMenu}></button>
           <ul className="mobile-nav">
-            <Link to="/" onClick={() => closeMenu()}>
+            <Link to="/" onClick={closeMenu}>
               <li>Home</li>
             </Link>
-            <Link to="/articles" onClick={() => closeMenu()}>
+            <Link to="/articles" onClick={closeMenu}>
               <li>Articles</li>
             </Link>
             <li>Popular</li>
             <li>Trending</li>
-            <li>Categories</li>
+            {loggedInUser === null ? (
+              <Link to="/login" onClick={closeMenu}>
+                <li>Log In</li>
+              </Link>
+            ) : (
+              <Link to="/" onClick={handleLogOut}>
+                <li>Log Out</li>
+              </Link>
+            )}
           </ul>
         </div>
       </div>
@@ -45,7 +58,15 @@ const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
         </Link>
         <li>Popular</li>
         <li>Trending</li>
-        <li>Categories</li>
+        {loggedInUser === null ? (
+          <Link to="/login">
+            <li>Log In</li>
+          </Link>
+        ) : (
+          <Link to="/" onClick={handleLogOut}>
+            <li>Log Out</li>
+          </Link>
+        )}
       </ul>
     </nav>
   );
