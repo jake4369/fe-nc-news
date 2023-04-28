@@ -1,4 +1,9 @@
+import { useUser } from "../../../context/UserContext";
+import { FaTrash } from "react-icons/fa";
+
 const CommentCard = ({ comment }) => {
+  const { loggedInUser } = useUser();
+
   return (
     <div className="comment-card">
       <div className="comment-author__info">
@@ -9,6 +14,10 @@ const CommentCard = ({ comment }) => {
         />
 
         <p className="comment-card__author">{comment.author}</p>
+
+        {loggedInUser !== null && loggedInUser.username === comment.author && (
+          <FaTrash className="trash-icon" />
+        )}
       </div>
 
       <p className="comment-card__body">{comment.body}</p>
