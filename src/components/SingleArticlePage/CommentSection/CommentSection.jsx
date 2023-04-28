@@ -1,16 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useUser } from "../../../context/UserContext";
 import { getComments, getUser, getArticle } from "../../../utils/api";
+import { Link } from "react-router-dom";
 
 import CommentCard from "./CommentCard";
 import Pagination from "../../Shared/Pagination";
+import CommentForm from "./CommentForm";
 
 const CommentSection = () => {
   const { article_id } = useParams();
+  const { loggedInUser } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(5);
   const [comments, setComments] = useState([]);
   const [totalComments, setTotalComments] = useState(0);
+  const [newCommentPosted, setNewCommentPosted] = useState(false);
   const commentsContainerRef = useRef(null);
 
   useEffect(() => {
@@ -35,35 +40,19 @@ const CommentSection = () => {
         });
       });
     });
-  }, [article_id, currentPage, limit]);
+  }, [article_id, currentPage, limit, newCommentPosted]);
 
   const commentCards = comments.map((comment) => {
     return <CommentCard key={comment.comment_id} comment={comment} />;
   });
 
-  // const lastPage = Math.ceil(totalComments / limit);
-
-  // const nextPage = (componentRef) => {
-  //   if (currentPage < lastPage) {
-  //     setCurrentPage((prev) => prev + 1);
-  //     componentRef.current.scrollIntoView();
-  //   }
-  // };
-
-  // const prevPage = (componentRef) => {
-  //   setCurrentPage((prev) => prev - 1);
-  //   componentRef.current.scrollIntoView();
-  // };
-
   return (
-    <section className="comment-section">
-      <h2
-        className="comment-section__heading"
-        ref={commentsContainerRef}
-        style={{ scrollBehavior: "smooth" }}
-      >
-        Comment Section
-      </h2>
+    <section
+      className="comment-section"
+      ref={commentsContainerRef}
+      style={{ scrollBehavior: "smooth" }}
+    >
+      <h2 className="comment-section__heading">Comment Section</h2>
 
       <div className="comments-container">
         {commentCards}
@@ -75,6 +64,20 @@ const CommentSection = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
+
+      {loggedInUser !== null ? (
+        <CommentForm
+          setNewCommentPosted={setNewCommentPosted}
+          commentsContainerRef={commentsContainerRef}
+        />
+      ) : (
+        <p>
+          <Link to="/login" style={{ color: "#f15d51" }}>
+            Log in
+          </Link>{" "}
+          to leave a comment
+        </p>
+      )}
     </section>
   );
 };
