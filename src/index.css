@@ -236,6 +236,7 @@ ul.mobile-nav li {
 .pagination-container {
   display: flex;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .pagination-btn {
@@ -566,9 +567,6 @@ p.top-article__text {
 .comment-author__info {
   display: flex;
   align-items: center;
-}
-
-.comment-author__info {
   margin-bottom: 1rem;
 }
 
@@ -584,6 +582,13 @@ p.top-article__text {
   font-size: 0.9375rem;
   line-height: 1.625rem;
   color: #00001a;
+}
+
+.comment-card .trash-icon {
+  font-size: 1.25rem;
+  margin-left: auto;
+  color: red;
+  cursor: pointer;
 }
 
 .comment-card__body {
@@ -613,6 +618,36 @@ p.top-article__text {
 .comment-card__stat {
   font-weight: 500;
   color: #5e607a;
+}
+
+/* ==================== 
+ COMMENT FORM
+ ==================== */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 45.625rem;
+}
+
+.comment-form__input {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  border: 1px solid #e9ebf0;
+  outline: none;
+  resize: none;
+  padding: 0.75rem 1.5rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+
+.comment-form__submit-btn {
+  display: inline-block;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  width: 6.5rem;
+  height: 2.5rem;
+  cursor: pointer;
 }
 
 /* ======================================== 
