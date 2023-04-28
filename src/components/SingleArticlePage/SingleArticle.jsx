@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getArticle } from "../../utils/api";
 import { useIsLoading } from "../../context/IsLoadingContext";
 
@@ -38,6 +38,12 @@ const SingleArticle = () => {
               <p className="single-article__created-at">
                 {article?.created_at.split("T")[0]}
               </p>
+              <Link
+                to={`/topics/${article?.topic}`}
+                className="single-article__topic-link"
+              >
+                <p className="topic-link">{article?.topic}</p>
+              </Link>
             </div>
 
             <p className="single-article__body">{article?.body}</p>

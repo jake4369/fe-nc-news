@@ -442,8 +442,8 @@ p.top-article__text {
 .all-article-section {
   display: grid;
   grid-template-columns: repeat(2, 48%);
-  gap: 2rem 0;
-  justify-content: space-between;
+  gap: 2rem 4%;
+  /* justify-content: space-between; */
   width: 100%;
   max-width: 56.25rem;
   margin: 0 auto;
@@ -453,7 +453,6 @@ p.top-article__text {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
 }
 
 .article-card__img {
@@ -521,6 +520,10 @@ p.top-article__text {
   font-size: 0.9375rem;
   line-height: 1.625rem;
   color: #5e607a;
+}
+
+.single-article__topic-link {
+  margin-left: auto;
 }
 
 .single-article__votes {
@@ -648,6 +651,27 @@ p.top-article__text {
   width: 6.5rem;
   height: 2.5rem;
   cursor: pointer;
+}
+
+/* ======================================== 
+ TOPIC PAGE
+ ======================================== */
+.topic-page .flex-container {
+  margin-bottom: 0;
+}
+
+.topic-page__heading {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #00001a;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.topic-page__hero-img {
+  width: 100%;
+  margin-bottom: 3rem;
 }
 
 /* ======================================== 
@@ -928,5 +952,13 @@ p.top-article__text {
     font-size: 1.125rem;
     line-height: 1.875rem;
     color: #5e607a;
+  }
+
+  /* ======================================== 
+ TOPIC PAGE
+ ======================================== */
+  .topic-page__heading {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
   }
 }

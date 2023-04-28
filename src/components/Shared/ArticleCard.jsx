@@ -9,7 +9,9 @@ const ArticleCard = ({ article }) => {
         <p className="article-card__title">{article.title}</p>
       </Link>
 
-      <p className="topic-link">{article.topic}</p>
+      <Link to={`/topics/${article.topic}`}>
+        <p className="topic-link">{article.topic}</p>
+      </Link>
     </div>
   );
 };
