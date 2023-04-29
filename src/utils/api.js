@@ -5,9 +5,33 @@ const newsAPI = axios.create({
 });
 
 // ARTICLES
-export const getAllArticles = () => {
+export const getAllArticles = (
+  topic = null,
+  sort_by = "created_at",
+  order = "desc"
+) => {
+  let url = `/articles`;
+
+  const queryParams = [];
+
+  if (topic !== null) {
+    queryParams.push(`topic=${encodeURIComponent(topic)}`);
+  }
+
+  if (sort_by !== null) {
+    queryParams.push(`sort_by=${encodeURIComponent(sort_by)}`);
+  }
+
+  if (order !== null) {
+    queryParams.push(`order=${encodeURIComponent(order)}`);
+  }
+
+  if (queryParams.length > 0) {
+    url += `?${queryParams.join("&")}`;
+  }
+
   return newsAPI
-    .get("/articles")
+    .get(url)
     .then(({ data }) => {
       return data.articles;
     })
