@@ -439,11 +439,32 @@ p.top-article__text {
 /* ==================== 
  ALL ARTICLES SECTION
  ==================== */
+.article-sort-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.article-sort-form label {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  margin-right: 1rem;
+}
+
+.article-sort-form select {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  outline: none;
+  border: 0.0625rem solid #5e607a;
+  padding: 0.5625rem 0;
+  cursor: pointer;
+}
+
 .all-article-section {
   display: grid;
   grid-template-columns: repeat(2, 48%);
   gap: 2rem 4%;
-  /* justify-content: space-between; */
   width: 100%;
   max-width: 56.25rem;
   margin: 0 auto;
