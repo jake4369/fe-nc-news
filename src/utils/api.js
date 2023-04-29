@@ -46,6 +46,12 @@ export const addComment = (article_id, username, body) => {
     .catch((error) => console.error(error));
 };
 
+export const deleteComment = (comment_id) => {
+  return newsAPI
+    .delete(`/comments/${comment_id}`)
+    .catch((error) => console.error(error));
+};
+
 // USERS
 export const getAllUsers = () => {
   return newsAPI
