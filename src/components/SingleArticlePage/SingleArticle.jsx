@@ -5,9 +5,10 @@ import { useIsLoading } from "../../context/IsLoadingContext";
 
 import LoadingSpinner from "../Shared/LoadingSpinner";
 
-const SingleArticle = () => {
+const SingleArticle = ({ newCommentPosted, commentDeleted }) => {
   const { article_id } = useParams();
   const [article, setArticle] = useState(null);
+  const [commentCount, setCommentCount] = useState(0);
   const { isLoading, setIsLoading } = useIsLoading();
 
   useEffect(() => {
@@ -17,6 +18,12 @@ const SingleArticle = () => {
       setIsLoading(false);
     });
   }, [article_id]);
+
+  useEffect(() => {
+    getArticle(article_id).then((articleData) => {
+      setCommentCount(articleData.comment_count);
+    });
+  }, [newCommentPosted, commentDeleted]);
 
   return (
     <div className="single-article__container">
@@ -55,9 +62,7 @@ const SingleArticle = () => {
               </p>
               <p className="single-article__comment-count">
                 Comments:{" "}
-                <span className="single-article__stat">
-                  {article?.comment_count}
-                </span>
+                <span className="single-article__stat">{commentCount}</span>
               </p>
             </div>
           </div>

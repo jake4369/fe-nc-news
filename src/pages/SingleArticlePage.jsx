@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useIsLoading } from "../context/IsLoadingContext";
 
 import SingleArticle from "../components/SingleArticlePage/SingleArticle";
@@ -7,6 +8,8 @@ import CommentSection from "../components/SingleArticlePage/CommentSection/Comme
 
 const SingleArticlePage = () => {
   const { isLoading, setIsLoading } = useIsLoading();
+  const [newCommentPosted, setNewCommentPosted] = useState(false);
+  const [commentDeleted, setCommentDeleted] = useState(false);
 
   return (
     <div className="single-article-page">
@@ -15,9 +18,17 @@ const SingleArticlePage = () => {
         style={{ marginBottom: isLoading ? "4rem" : "0" }}
       >
         <section className="articles-column">
-          <SingleArticle />
+          <SingleArticle
+            newCommentPosted={newCommentPosted}
+            commentDeleted={commentDeleted}
+          />
 
-          <CommentSection />
+          <CommentSection
+            newCommentPosted={newCommentPosted}
+            setNewCommentPosted={setNewCommentPosted}
+            commentDeleted={commentDeleted}
+            setCommentDeleted={setCommentDeleted}
+          />
         </section>
 
         <NewArticles />

@@ -1,12 +1,9 @@
 const Pagination = ({
   currentPage,
   setCurrentPage,
-  totalComments,
-  limit,
   componentRef,
+  lastPage,
 }) => {
-  const lastPage = Math.ceil(totalComments / limit);
-
   const nextPage = (componentRef) => {
     if (currentPage < lastPage) {
       setCurrentPage((prev) => prev + 1);

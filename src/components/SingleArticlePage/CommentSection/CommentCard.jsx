@@ -1,8 +1,18 @@
+import { deleteComment } from "../../../utils/api";
+
 import { useUser } from "../../../context/UserContext";
 import { FaTrash } from "react-icons/fa";
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, setCommentDeleted, setCurrentPage }) => {
   const { loggedInUser } = useUser();
+
+  const handleDelete = (comment_id) => {
+    setCommentDeleted(false);
+    deleteComment(comment_id).then(() => {
+      setCommentDeleted(true);
+      setCurrentPage(1);
+    });
+  };
 
   return (
     <div className="comment-card">
@@ -16,7 +26,10 @@ const CommentCard = ({ comment }) => {
         <p className="comment-card__author">{comment.author}</p>
 
         {loggedInUser !== null && loggedInUser.username === comment.author && (
-          <FaTrash className="trash-icon" />
+          <FaTrash
+            className="trash-icon"
+            onClick={() => handleDelete(comment.comment_id)}
+          />
         )}
       </div>
 

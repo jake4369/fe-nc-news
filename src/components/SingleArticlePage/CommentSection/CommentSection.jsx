@@ -8,21 +8,25 @@ import CommentCard from "./CommentCard";
 import Pagination from "../../Shared/Pagination";
 import CommentForm from "./CommentForm";
 
-const CommentSection = () => {
+const CommentSection = ({
+  newCommentPosted,
+  setNewCommentPosted,
+  commentDeleted,
+  setCommentDeleted,
+}) => {
   const { article_id } = useParams();
   const { loggedInUser } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(5);
   const [comments, setComments] = useState([]);
   const [totalComments, setTotalComments] = useState(0);
-  const [newCommentPosted, setNewCommentPosted] = useState(false);
   const commentsContainerRef = useRef(null);
 
   useEffect(() => {
     getArticle(article_id).then((articleData) => {
       setTotalComments(articleData.comment_count);
     });
-  }, []);
+  }, [article_id, newCommentPosted, commentDeleted]);
 
   useEffect(() => {
     getComments(article_id, currentPage, limit).then((commentsData) => {
@@ -40,10 +44,19 @@ const CommentSection = () => {
         });
       });
     });
-  }, [article_id, currentPage, limit, newCommentPosted]);
+  }, [article_id, currentPage, limit, newCommentPosted, commentDeleted]);
+
+  const lastPage = Math.ceil(totalComments / limit);
 
   const commentCards = comments.map((comment) => {
-    return <CommentCard key={comment.comment_id} comment={comment} />;
+    return (
+      <CommentCard
+        key={comment.comment_id}
+        comment={comment}
+        setCommentDeleted={setCommentDeleted}
+        setCurrentPage={setCurrentPage}
+      />
+    );
   });
 
   return (
@@ -61,7 +74,7 @@ const CommentSection = () => {
           totalComments={totalComments}
           limit={limit}
           componentRef={commentsContainerRef}
-          setCurrentPage={setCurrentPage}
+          lastPage={lastPage}
         />
       </div>
 
