@@ -7,6 +7,7 @@ import AllArticles from "../components/AllArticlesPage/AllArticles";
 import NewArticles from "../components/Shared/NewArticles";
 import TopThreeArticles from "../components/Shared/TopThreeArticles";
 import LoadingSpinner from "../components/Shared/LoadingSpinner";
+import SortArticles from "../components/Shared/SortArticles";
 
 const AllArticlesPage = () => {
   const [allArticles, setAllArticles] = useState([]);
@@ -24,6 +25,38 @@ const AllArticlesPage = () => {
     });
   }, []);
 
+  const handleSort = (sortBy, sortOrder) => {
+    let sorted = [...allArticles];
+
+    if (sortBy === "created_at") {
+      sorted.sort((a, b) => {
+        if (sortOrder === "desc") {
+          return new Date(b.created_at) - new Date(a.created_at);
+        } else {
+          return new Date(a.created_at) - new Date(b.created_at);
+        }
+      });
+    } else if (sortBy === "comment_count") {
+      sorted.sort((a, b) => {
+        if (sortOrder === "desc") {
+          return b.comment_count - a.comment_count;
+        } else {
+          return a.comment_count - b.comment_count;
+        }
+      });
+    } else if (sortBy === "votes") {
+      sorted.sort((a, b) => {
+        if (sortOrder === "desc") {
+          return b.votes - a.votes;
+        } else {
+          return a.votes - b.votes;
+        }
+      });
+    }
+
+    setAllArticles(sorted);
+  };
+
   return (
     <div className="all-articles-page">
       <div
@@ -37,6 +70,9 @@ const AllArticlesPage = () => {
         ) : (
           <section className="articles-column">
             <MostPopularArticle article={mostPopularArticle} />
+
+            <SortArticles handleSort={handleSort} />
+
             <AllArticles articles={allArticles} />
           </section>
         )}
