@@ -75,6 +75,7 @@ const CommentSection = ({
           limit={limit}
           componentRef={commentsContainerRef}
           lastPage={lastPage}
+          setCurrentPage={setCurrentPage}
         />
       </div>
 
