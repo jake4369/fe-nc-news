@@ -17,11 +17,7 @@ const CommentCard = ({ comment, setCommentDeleted, setCurrentPage }) => {
 
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <div className="comment-card">
           <div className="comment-author__info">
             <img
