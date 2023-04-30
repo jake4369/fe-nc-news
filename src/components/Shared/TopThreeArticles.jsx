@@ -18,6 +18,10 @@ const TopThreeArticles = () => {
     });
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const topArticles = topThreeArticles.map((article, index) => {
     return (
       <div className="top-article" key={article.article_id}>
@@ -28,7 +32,10 @@ const TopThreeArticles = () => {
         />
         <div className="top-article__text-container">
           <span className="top-article__number">0{index + 1}</span>
-          <Link to={`/articles/${article.article_id}`}>
+          <Link
+            to={`/articles/${article.article_id}`}
+            onClick={() => scrollToTop()}
+          >
             <h3 className="top-article__heading">{article.title}</h3>
           </Link>
         </div>
