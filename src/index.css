@@ -467,6 +467,11 @@ p.top-article__text {
   line-height: 2.5rem;
   color: #00001a;
   margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.most-popular-article__title:hover {
+  color: #e9aa52;
 }
 
 .most-popular-article__img {
@@ -538,10 +543,21 @@ p.top-article__text {
   line-height: 1.5rem;
   color: #00001a;
   margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.article-card__title:hover {
+  color: #e9aa52;
 }
 
 .article-card .topic-link {
   margin-top: auto;
+  transition: all 0.3s ease-in-out;
+  width: fit-content;
+}
+
+.article-card .topic-link:hover {
+  color: #e9aa52;
 }
 
 /* ======================================== 
@@ -914,8 +930,9 @@ p.top-article__text {
     width: 31.5315315315%;
     min-width: 21.875rem;
     max-width: 21.875rem;
-    height: 31.9375rem;
-    max-height: 31.9375rem;
+    height: fit-content;
+    min-height: 36.8125rem;
+    max-height: fit-content;
     margin: 0;
     padding: 2rem 1.5rem 1.9375rem 1.5rem;
   }
