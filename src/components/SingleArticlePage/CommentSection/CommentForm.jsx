@@ -4,7 +4,11 @@ import { addComment } from "../../../utils/api";
 
 import { useUser } from "../../../context/UserContext";
 
-const CommentForm = ({ setNewCommentPosted, commentsContainerRef }) => {
+const CommentForm = ({
+  setNewCommentPosted,
+  commentsContainerRef,
+  setCurrentPage,
+}) => {
   const { loggedInUser } = useUser();
   const { article_id } = useParams();
   const [commentBody, setCommentBody] = useState("");
@@ -23,6 +27,7 @@ const CommentForm = ({ setNewCommentPosted, commentsContainerRef }) => {
           setNewCommentPosted(true);
           setCommentBody("");
           commentsContainerRef.current.scrollIntoView();
+          setCurrentPage(1);
         });
       } else {
         alert("Comment must not be empty");

@@ -59,6 +59,10 @@ const CommentSection = ({
     );
   });
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section
       className="comment-section"
@@ -83,10 +87,15 @@ const CommentSection = ({
         <CommentForm
           setNewCommentPosted={setNewCommentPosted}
           commentsContainerRef={commentsContainerRef}
+          setCurrentPage={setCurrentPage}
         />
       ) : (
         <p>
-          <Link to="/login" style={{ color: "#f15d51" }}>
+          <Link
+            to="/login"
+            style={{ color: "#f15d51" }}
+            onClick={() => scrollToTop()}
+          >
             Log in
           </Link>{" "}
           to leave a comment
