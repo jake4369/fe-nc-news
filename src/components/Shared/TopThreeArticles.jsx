@@ -11,10 +11,8 @@ const TopThreeArticles = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getAllArticles().then((articlesData) => {
-      const sortedArticles = articlesData.sort((a, b) => b.votes - a.votes);
-
-      setTopThreeArticles(sortedArticles.slice(0, 3));
+    getAllArticles(null, "votes", "desc").then((articlesData) => {
+      setTopThreeArticles(articlesData.slice(0, 3));
 
       setIsLoading(false);
     });
