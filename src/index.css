@@ -80,13 +80,12 @@ header {
   width: 100%;
   max-width: 56.25rem;
   margin: 0 auto 2rem auto;
-  padding-top: 1.75rem;
   position: relative;
+  padding: 1.75rem 4.26666666667%;
 }
 
 .logo {
   width: 44.98px;
-  margin-left: 4.26666666667%;
 }
 
 .open-menu-btn,
