@@ -13,6 +13,10 @@ const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
     setNavOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <nav>
       <div
@@ -28,16 +32,34 @@ const NavBar = ({ navOpen, setNavOpen, exitAnimation, setExitAnimation }) => {
         <div className="mobile-nav__container">
           <button className="close-menu-btn" onClick={closeMenu}></button>
           <ul className="mobile-nav">
-            <Link to="/" onClick={closeMenu}>
+            <Link
+              to="/"
+              onClick={() => {
+                closeMenu();
+                scrollToTop();
+              }}
+            >
               <li>Home</li>
             </Link>
-            <Link to="/articles" onClick={closeMenu}>
+            <Link
+              to="/articles"
+              onClick={() => {
+                closeMenu();
+                scrollToTop();
+              }}
+            >
               <li>Articles</li>
             </Link>
             <li>Popular</li>
             <li>Trending</li>
             {loggedInUser === null ? (
-              <Link to="/login" onClick={closeMenu}>
+              <Link
+                to="/login"
+                onClick={() => {
+                  closeMenu();
+                  scrollToTop();
+                }}
+              >
                 <li>Log In</li>
               </Link>
             ) : (
