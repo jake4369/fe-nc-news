@@ -17,11 +17,9 @@ const AllArticlesPage = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getAllArticles().then((articlesData) => {
-      const sortedArticles = articlesData.sort((a, b) => b.votes - a.votes);
-
-      setMostPopularArticle(sortedArticles[0]);
-      setAllArticles(sortedArticles.slice(1));
+    getAllArticles(null, "votes", "desc").then((articlesData) => {
+      setMostPopularArticle(articlesData[0]);
+      setAllArticles(articlesData.slice(1));
       setIsLoading(false);
     });
   }, []);
