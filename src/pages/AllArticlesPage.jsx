@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllArticles } from "../utils/api";
 import { useIsLoading } from "../context/IsLoadingContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 import MostPopularArticle from "../components/AllArticlesPage/MostPopularArticle";
 import AllArticles from "../components/AllArticlesPage/AllArticles";
@@ -73,7 +74,11 @@ const AllArticlesPage = () => {
 
             <SortArticles handleSort={handleSort} />
 
-            <AllArticles articles={allArticles} />
+            <AnimatePresence>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                <AllArticles articles={allArticles} />
+              </motion.div>
+            </AnimatePresence>
           </section>
         )}
 

@@ -25,8 +25,6 @@ const TopicPage = () => {
     });
   }, []);
 
-  console.log(topicArticles);
-
   const heroImg = eval(`${topic}HeroImg`);
 
   const articleCards = topicArticles.map((article) => {

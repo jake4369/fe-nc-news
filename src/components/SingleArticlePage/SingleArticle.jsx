@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticle } from "../../utils/api";
 import { useIsLoading } from "../../context/IsLoadingContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 import LoadingSpinner from "../Shared/LoadingSpinner";
 
@@ -31,13 +32,17 @@ const SingleArticle = ({ newCommentPosted, commentDeleted }) => {
         <LoadingSpinner />
       ) : (
         <>
-          <h1 className="single-article__title">{article?.title}</h1>
+          <AnimatePresence>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <h1 className="single-article__title">{article?.title}</h1>
 
-          <img
-            src={article?.article_img_url}
-            alt=""
-            className="single-article__img"
-          />
+              <img
+                src={article?.article_img_url}
+                alt=""
+                className="single-article__img"
+              />
+            </motion.div>
+          </AnimatePresence>
 
           <div className="single-article__flex-container">
             <div className="single-article__author-info">
