@@ -397,6 +397,55 @@ p.top-article__text {
 }
 
 /* ======================================== 
+ LOGIN PAGE
+ ======================================== */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-page__heading {
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 91.4666666667%;
+  max-width: 25rem;
+  margin: 0 auto;
+}
+
+.login-form__username-input {
+  border: 0.0625rem solid #c5c6ce;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5625rem 0 0.5625rem 1rem;
+}
+
+.login-form label {
+  font-size: 0.875rem;
+  color: red;
+}
+
+.login-form__login-btn {
+  font-family: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5625rem 0 0.5625rem 1rem;
+  cursor: pointer;
+}
+
+/* ======================================== 
  ALL ARTICLES PAGE
  ======================================== */
 .articles-column {
@@ -748,6 +797,28 @@ p.top-article__text {
 
   .mobile-nav__slider {
     display: none;
+  }
+
+  /* ======================================== 
+ LOGIN PAGE
+ ======================================== */
+  .login-page__heading {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-form__username-input {
+    padding: 0.6875rem 0 0.6875rem 1rem;
+  }
+
+  .login-form__login-btn {
+    padding: 0.6875rem 0 0.6875rem 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .login-form__login-btn:hover {
+    background: #e9aa52;
   }
 }
 
