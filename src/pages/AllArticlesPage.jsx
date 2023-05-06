@@ -14,6 +14,7 @@ const AllArticlesPage = () => {
   const [allArticles, setAllArticles] = useState([]);
   const [mostPopularArticle, setMostPopularArticle] = useState(null);
   const { isLoading, setIsLoading } = useIsLoading();
+  const [sortKey, setSortKey] = useState(0);
 
   useEffect(() => {
     setIsLoading(true);
@@ -54,6 +55,7 @@ const AllArticlesPage = () => {
     }
 
     setAllArticles(sorted);
+    setSortKey(sortKey + 1);
   };
 
   return (
@@ -72,7 +74,7 @@ const AllArticlesPage = () => {
 
             <SortArticles handleSort={handleSort} />
 
-            <AnimatePresence>
+            <AnimatePresence key={sortKey}>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                 <AllArticles articles={allArticles} />
               </motion.div>
