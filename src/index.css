@@ -550,14 +550,23 @@ p.top-article__text {
   color: #e9aa52;
 }
 
-.article-card .topic-link {
+.topic-link {
   margin-top: auto;
   transition: all 0.3s ease-in-out;
   width: fit-content;
+  margin: auto 0 1rem 0;
 }
 
-.article-card .topic-link:hover {
+.topic-link:hover {
   color: #e9aa52;
+}
+
+.article-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
 }
 
 /* ======================================== 
