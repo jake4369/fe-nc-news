@@ -628,6 +628,12 @@ p.top-article__text {
   color: #00001a;
 }
 
+.thumbsup-icon {
+  font-size: 1.125rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
 .single-article__comment-count {
   font-weight: 700;
   font-size: 0.9375rem;

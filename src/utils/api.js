@@ -47,6 +47,15 @@ export const getArticle = (article_id) => {
     .catch((error) => console.error(error));
 };
 
+export const updateArticleVotes = (article_id, incVotes) => {
+  return newsAPI
+    .patch(`/articles/${article_id}`, { incVotes })
+    .then(({ data }) => {
+      return data.article;
+    })
+    .catch((error) => console.error(error));
+};
+
 // COMMENTS
 export const getComments = (article_id, page = 1, limit = 5) => {
   return newsAPI
