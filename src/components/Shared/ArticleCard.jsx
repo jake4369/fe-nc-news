@@ -26,6 +26,15 @@ const ArticleCard = ({ article }) => {
           <Link to={`/topics/${article.topic}`} onClick={() => scrollToTop()}>
             <p className="topic-link">{article.topic}</p>
           </Link>
+
+          <div className="article-stats">
+            <p>
+              Votes: <strong>{article.votes}</strong>
+            </p>
+            <p>
+              Comments: <strong>{article.comment_count}</strong>
+            </p>
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>
